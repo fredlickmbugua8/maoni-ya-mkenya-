@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <meta name="theme-color" content="#0b3d2e" />
+  <title>Maoni ya Mkenya — National Opinion & Polling Platform (Prototype)</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <!-- Typed/AI integration point: production uses Next.js + Supabase + AI moderation API -->
+  <div id="prototype-banner">
+    PROTOTYPE — static mockups with mock data. No real accounts, votes or payments.
+    <button id="banner-close" type="button" aria-label="Dismiss">×</button>
+  </div>
+
+  <header id="app-header">
+    <div class="header-inner">
+      <a class="brand" href="#/home">
+        <span class="brand-mark">MY</span>
+        <span class="brand-text">
+          <strong>Maoni ya Mkenya</strong>
+          <small>National Opinion Platform</small>
+        </span>
+      </a>
+
+      <nav id="desktop-nav" class="top-nav">
+        <a href="#/home" data-nav="home">Home</a>
+        <a href="#/polls" data-nav="polls">Polls</a>
+        <a href="#/archives" data-nav="archives">Archives</a>
+        <a href="#/results" data-nav="results">Results</a>
+        <a href="#/support" data-nav="support">Support</a>
+        <a href="#/admin" data-nav="admin" class="admin-only">Admin</a>
+      </nav>
+
+      <div class="header-actions">
+        <a href="#/notifications" class="icon-btn" id="notif-btn" title="Notifications">
+          <span aria-hidden="true">🔔</span>
+          <span class="badge" id="notif-count">0</span>
+        </a>
+        <div class="role-switch" id="role-switch" title="Prototype only: switch viewer role">
+          <button type="button" data-role="user" class="active">Voter</button>
+          <button type="button" data-role="admin">Admin</button>
+        </div>
+        <a href="#/login" class="btn btn-ghost" id="auth-btn">Sign in</a>
+      </div>
+    </div>
+    <div id="session-strip" class="session-strip hidden"></div>
+  </header>
+
+  <main id="view" class="view" aria-live="polite"></main>
+
+  <footer id="app-footer">
+    <div class="footer-inner">
+      <div>
+        <strong>Maoni ya Mkenya</strong>
+        <p>Transparent national polling. One verified account, one vote.</p>
+      </div>
+      <div class="footer-links">
+        <a href="#/home">Home</a>
+        <a href="#/polls">Polls</a>
+        <a href="#/archives">Archives</a>
+        <a href="#/support">Request a poll</a>
+        <a href="#/admin">Admin</a>
+      </div>
+      <p class="footer-legal">
+        Data handled per the Kenya Data Protection Act, 2019 (ODPC). Prototype only.
+      </p>
+    </div>
+  </footer>
+
+  <nav id="mobile-nav" class="bottom-nav">
+    <a href="#/home" data-nav="home"><span>🏠</span>Home</a>
+    <a href="#/polls" data-nav="polls"><span>🗳️</span>Polls</a>
+    <a href="#/archives" data-nav="archives"><span>🗄️</span>Archive</a>
+    <a href="#/support" data-nav="support"><span>💬</span>Chat</a>
+    <a href="#/admin" data-nav="admin" class="admin-only"><span>📊</span>Admin</a>
+  </nav>
+
+  <div id="toast-root" class="toast-root"></div>
+  <div id="modal-root"></div>
+
+  <script src="app.js"></script>
+</body>
+</html>

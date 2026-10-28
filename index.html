@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <meta name="theme-color" content="#0b6e4f" />
+
+  <!-- SEO -->
+  <title>Maoni ya Mkenya — Kenya's National Opinion &amp; Polling Platform</title>
+  <meta name="description" content="Vote on national opinion polls across every sector of Kenyan leadership, government and public life. One verified account, one vote. Transparent, independent and accountable." />
+  <meta name="keywords" content="Kenya polls, national opinion, Kenya voting, Maoni ya Mkenya, Kenya democracy, citizen polls, Kenya government" />
+  <link rel="canonical" href="https://maoniyamkenya.co.ke/" />
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="Maoni ya Mkenya" />
+  <meta property="og:title" content="Maoni ya Mkenya — Kenya's National Opinion Platform" />
+  <meta property="og:description" content="Your voice on the issues that shape Kenya. Vote on national polls across every sector — leadership, economy, health, education and more." />
+  <meta property="og:image" content="https://maoniyamkenya.co.ke/og-image.jpg" />
+  <meta property="og:url" content="https://maoniyamkenya.co.ke/" />
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Maoni ya Mkenya — Kenya's National Opinion Platform" />
+  <meta name="twitter:description" content="Vote on national polls. One verified account, one vote." />
+
+  <!-- Schema.org -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "name": "Maoni ya Mkenya",
+    "url": "https://maoniyamkenya.co.ke/",
+    "description": "Kenya's national opinion and polling platform",
+    "potentialAction": {
+      "@type": "SearchAction",
+      "target": "https://maoniyamkenya.co.ke/#/polls?q={search_term_string}",
+      "query-input": "required name=search_term_string"
+    }
+  }
+  </script>
+
+  <!-- Favicon (inline SVG as data URI) -->
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%23101418'/%3E%3Crect y='10' width='32' height='4' fill='%230b6e4f'/%3E%3Crect y='18' width='32' height='4' fill='%230b6e4f'/%3E%3Crect y='14' width='32' height='4' fill='%23c8102e'/%3E%3Ctext x='16' y='26' text-anchor='middle' fill='white' font-size='10' font-weight='800' font-family='system-ui'%3EMY%3C/text%3E%3C/svg%3E" />
+  <link rel="apple-touch-icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%230b6e4f'/%3E%3Ctext x='16' y='22' text-anchor='middle' fill='white' font-size='14' font-weight='800' font-family='system-ui'%3EMY%3C/text%3E%3C/svg%3E" />
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Plus+Jakarta+Sans:wght@700;800;900&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header id="app-header">
+    <div class="header-inner">
+      <a class="brand" href="#/home" id="brand-link">
+        <div class="brand-mark">
+          <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M10 2L12.8 7.4L19 8.3L14.5 12.7L15.6 19L10 16L4.4 19L5.5 12.7L1 8.3L7.2 7.4L10 2Z" fill="white" stroke="none"/>
+          </svg>
+        </div>
+        <span class="brand-text">
+          <strong>Maoni ya Mkenya</strong>
+          <small>National Opinion Platform</small>
+        </span>
+      </a>
+
+      <nav id="desktop-nav" class="top-nav" aria-label="Main navigation">
+        <a href="#/home" data-nav="home">Home</a>
+        <a href="#/polls" data-nav="polls">Polls</a>
+        <a href="#/archives" data-nav="archives">Archives</a>
+        <a href="#/results" data-nav="results">Results</a>
+        <a href="#/support" data-nav="support">Support</a>
+        <a href="#/admin" data-nav="admin" class="admin-only">Admin</a>
+      </nav>
+
+      <div class="header-actions">
+        <a href="#/notifications" class="icon-btn" id="notif-btn" title="Notifications" aria-label="Notifications">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.73 21a2 2 0 0 1-3.46 0"/></svg>
+          <span class="badge" id="notif-count">0</span>
+        </a>
+        <div class="role-switch" id="role-switch" title="Switch viewer role">
+          <button type="button" data-role="user" class="active" id="role-voter">Voter</button>
+          <button type="button" data-role="admin" id="role-admin">Admin</button>
+        </div>
+        <a href="#/login" class="btn btn-ghost btn-sm" id="auth-btn">Sign in</a>
+      </div>
+    </div>
+    <div id="session-strip" class="session-strip hidden"></div>
+  </header>
+
+  <main id="view" class="view" aria-live="polite" aria-atomic="false"></main>
+
+  <footer id="app-footer">
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <div class="footer-logo">
+          <div class="brand-mark brand-mark-sm"></div>
+          <div>
+            <strong>Maoni ya Mkenya</strong>
+            <p>Transparent national polling. One verified account, one vote.</p>
+          </div>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h4>Platform</h4>
+        <a href="#/home">Home</a>
+        <a href="#/polls">Live Polls</a>
+        <a href="#/archives">Archives</a>
+        <a href="#/results">Results</a>
+      </div>
+      <div class="footer-col">
+        <h4>Participate</h4>
+        <a href="#/support">Request a Poll</a>
+        <a href="#/signup">Create Account</a>
+        <a href="#/login">Sign In</a>
+        <a href="#/notifications">Notifications</a>
+      </div>
+      <div class="footer-col">
+        <h4>Legal &amp; Trust</h4>
+        <a href="#">Privacy Policy</a>
+        <a href="#">Data Rights (ODPC)</a>
+        <a href="#">Integrity Charter</a>
+        <a href="#">Contact</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div class="footer-bottom-inner">
+        <p>© 2026 Maoni ya Mkenya. Data handled per the <strong>Kenya Data Protection Act, 2019</strong> (ODPC).</p>
+        <div class="footer-badges">
+          <span class="footer-badge">🔐 ODPC Compliant</span>
+          <span class="footer-badge">🛡️ NCIC Act Adherent</span>
+          <span class="footer-badge">🇰🇪 Made in Kenya</span>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <nav id="mobile-nav" class="bottom-nav" aria-label="Mobile navigation">
+    <a href="#/home" data-nav="home" id="mn-home"><span>🏠</span>Home</a>
+    <a href="#/polls" data-nav="polls" id="mn-polls"><span>🗳️</span>Polls</a>
+    <a href="#/archives" data-nav="archives" id="mn-archives"><span>🗄️</span>Archive</a>
+    <a href="#/support" data-nav="support" id="mn-support"><span>💬</span>Support</a>
+    <a href="#/admin" data-nav="admin" class="admin-only" id="mn-admin"><span>📊</span>Admin</a>
+  </nav>
+
+  <div id="toast-root" class="toast-root" aria-live="assertive"></div>
+  <div id="modal-root" role="dialog" aria-modal="true"></div>
+
+  <!-- Page transition overlay -->
+  <div id="page-transition" class="page-transition" aria-hidden="true"></div>
+
+  <script src="app.js"></script>
+</body>
+</html>
