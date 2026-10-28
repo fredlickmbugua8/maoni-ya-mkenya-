@@ -55,10 +55,11 @@ function fmtTime(date) {
    -------------------------------------------------------------------------- */
 const SECTORS = [
   { id: 'all',            name: 'All Sectors',                   ic: '🇰🇪' },
+  { id: 'politics',       name: 'Politics & County Elections',   ic: '🗳️' },
   { id: 'presidency',     name: 'Presidency & Executive',        ic: '🏛️' },
   { id: 'parliament',     name: 'Parliament & Legislature',      ic: '⚖️' },
   { id: 'judiciary',      name: 'Judiciary',                     ic: '🧑‍⚖️' },
-  { id: 'county',         name: 'County Governments',            ic: '🗺️' },
+  { id: 'county',         name: 'County Governments & Devolution', ic: '🗺️' },
   { id: 'security',       name: 'Security & Defence',            ic: '🛡️' },
   { id: 'economy',        name: 'Economy, Finance & Tax',        ic: '💰' },
   { id: 'education',      name: 'Education',                     ic: '🎓' },
@@ -111,6 +112,52 @@ const POLLS = [
       { label: 'Raila Odinga', subtitle: 'Azimio la Umoja / ODM', image: CAND_RAILA_IMG, votes: 23140 },
       { label: 'Kalonzo Musyoka', subtitle: 'Wiper Democratic Movement', image: CAND_KALONZO_IMG, votes: 12450 },
       { label: 'Undecided / Other Candidate', subtitle: 'Awaiting party coalition declarations', image: '', votes: 4720 },
+    ],
+  }),
+  mkPoll({
+    id: 'p-nairobi-gov-2027',
+    title: 'Nairobi County Governor 2027: Who is your preferred choice for City Hall?',
+    summary: 'Evaluating candidate popularity, city services delivery, water distribution, traffic management, and garbage collection in Nairobi City County.',
+    sector: 'politics',
+    status: 'live',
+    endsAt: inHours(64),
+    featured: true,
+    liveResults: false,
+    coverImage: HERO_IMAGE,
+    voters: 39420,
+    options: [
+      { label: 'Johnson Sakaja', subtitle: 'Current Governor · UDA Coalition', image: CAND_RUTO_IMG, votes: 14210 },
+      { label: 'Tim Wanyonyi', subtitle: 'MP Westlands · ODM / Azimio', image: CAND_RAILA_IMG, votes: 15380 },
+      { label: 'Babu Owino', subtitle: 'MP Embakasi East · ODM', image: CAND_KALONZO_IMG, votes: 7620 },
+      { label: 'Undecided / Independent Candidate', subtitle: 'Alternative independent leadership', image: '', votes: 2210 },
+    ],
+  }),
+  mkPoll({
+    id: 'p-mombasa-politics',
+    title: 'Mombasa County: Rate your confidence in the County Executive and Port Economy priorities',
+    summary: 'Citizen opinion on county leadership performance, blue economy jobs, waste management, and youth empowerment in Mombasa.',
+    sector: 'politics',
+    status: 'live',
+    endsAt: inHours(80),
+    voters: 21850,
+    options: [
+      { label: 'High confidence — county is on track', subtitle: 'Progress on healthcare & port city services', image: '', votes: 10420 },
+      { label: 'Low confidence — want change in 2027', subtitle: 'Calls for faster economic turnaround', image: '', votes: 9140 },
+      { label: 'Undecided / Awaiting delivery', subtitle: 'Monitoring implementation', image: '', votes: 2290 },
+    ],
+  }),
+  mkPoll({
+    id: 'p-nakuru-politics',
+    title: 'Nakuru County 2027: Which political formation holds the strongest grassroots support?',
+    summary: 'Grassroots political temperature on party coalition support across Nakuru County wards and agricultural zones.',
+    sector: 'politics',
+    status: 'live',
+    endsAt: inHours(48),
+    voters: 18760,
+    options: [
+      { label: 'Kenya Kwanza / UDA Coalition', subtitle: 'Incumbent coalition base', image: '', votes: 10210 },
+      { label: 'Azimio / Opposition Coalition', subtitle: 'Opposition reform agenda', image: '', votes: 6180 },
+      { label: 'Independent Candidates Movement', subtitle: 'Rejecting rigid party lines', image: '', votes: 2370 },
     ],
   }),
   mkPoll({
@@ -1801,7 +1848,7 @@ function openCreatePollModal() {
   $('#np-preset-governor').addEventListener('click', () => {
     $('#np-title').value = 'Nairobi County Gubernatorial Race: Who has your confidence for Governor?';
     $('#np-summary').value = 'Voters evaluate leadership, public service delivery and manifestos for the Nairobi City County leadership.';
-    $('#np-sector').value = 'county';
+    $('#np-sector').value = 'politics';
     coverImageDataUrl = HERO_IMAGE;
     coverPreview.src = HERO_IMAGE;
     coverPreview.style.display = 'block';
